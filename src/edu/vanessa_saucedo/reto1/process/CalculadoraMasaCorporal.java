@@ -28,6 +28,7 @@ public class CalculadoraMasaCorporal {
      * Aqui muestra el tipo de indice de masa corporal
      * dependiendo el resultado de la operación
      * @param imc indice de masa corporal
+     * @return indice de masa corporal
      */
     public static double clasificarIndiceMasaCorporal(double imc){
         if (imc<=18.9){
