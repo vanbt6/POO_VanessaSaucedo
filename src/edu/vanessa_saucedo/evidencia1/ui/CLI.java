@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Clase de interfaz de pedida de datos al usuario
  */
 
-public class Cli {
+public class CLI {
     static Scanner scanner = new Scanner(System.in);
 
     public static void launchApp(ArrayList<Medicamento> medicamentos){

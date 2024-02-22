@@ -57,9 +57,9 @@ public class ProcesadorMedicamento {
         double precioVenta = 0.0;
         if (formaFarmaceutica.equalsIgnoreCase("solido")) {
             precioVenta = precioPublico * 1.09;
-        } else if (formaFarmaceutica.equalsIgnoreCase("solido semisolido")) {
+        } else if (formaFarmaceutica.equalsIgnoreCase("semisolido")) {
             precioVenta = precioPublico * 1.12;
-        } else if (formaFarmaceutica.equalsIgnoreCase("solido liquido")) {
+        } else if (formaFarmaceutica.equalsIgnoreCase("liquido")) {
             precioVenta = precioPublico * 1.13;
         }
         return precioVenta;
