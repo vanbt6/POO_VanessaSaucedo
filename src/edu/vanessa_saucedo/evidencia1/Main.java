@@ -7,9 +7,13 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args){
-        //arrayList para los medicamentos
-        ArrayList<Medicamento> medicamentos = new ArrayList<>();
-        CLI.launchApp(medicamentos);
 
+        try{
+            //arrayList para los medicamentos
+            ArrayList<Medicamento> medicamentos = new ArrayList<>();
+            CLI.launchApp(medicamentos);
+        }catch (Exception e){
+            System.out.println("Error inesperado");
+        }
     }
 }

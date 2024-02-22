@@ -30,7 +30,7 @@ public class CLI {
             System.out.println("Ingrese el nombre registrado:");
             String nombreRegistrado = scanner.nextLine();
 
-            System.out.println("Ingrese el precio al público:");
+            System.out.println("Ingrese el precio al público (ingrese de la siguiente forma: 00.00) :");
             double precioPublico = Double.parseDouble(scanner.nextLine());
 
             System.out.println("Ingrese la presentación de su medicamento: ");
