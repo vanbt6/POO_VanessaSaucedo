@@ -34,7 +34,7 @@ public class Medicamento {
                 "Nombre Registrado: %s \n" +
                 "Forma Farmacéutica: %s \n" +
                 "Precio Público: %.2f \n" +
-                "Precio Venta %.2f: ", nombreQuimico, nombreGenerico, nombreRegistrado,
+                "Precio Venta: %.2f ", nombreQuimico, nombreGenerico, nombreRegistrado,
                 formaFarmaceutica, precioPublico, precioVenta);
     }
 }
