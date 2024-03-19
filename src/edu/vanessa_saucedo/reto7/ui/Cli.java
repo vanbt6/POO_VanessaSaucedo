@@ -7,20 +7,24 @@ public class Cli {
     private static final Scanner scanner = new Scanner(System.in);
     private static double num1;
     private static double num2;
+    private static Idiomas idiomas = new Espanol();
 
     public static void showMenu(){
-        System.out.println("---Calculadora---");
+        System.out.println("Escoga un idioma (Choose a language:): ");
+        System.out.println("A. Español (Spanish)");
+        System.out.println("B. Ingles (English)");
+        String idioma = scanner.nextLine();
 
-        System.out.println("Elige una opción: ");
-        System.out.println("1. Suma");
-        System.out.println("2. Resta");
-        System.out.println("3. Multiplicación");
-        System.out.println("4. División");
-        System.out.println("5. Modulo");
-        System.out.println("6. Potencia");
-        System.out.println("7. Logaritmo");
-        System.out.println("Ingrese el numero de la opción deseada: ");
+        switch (idioma){
+            case "A":
+                idiomas = new Espanol();
+                break;
+            case "B":
+                idiomas = new Ingles();
 
+                break;
+        }
+        System.out.println(idiomas.MENU);
     }
 
     public static void launchCalculadora(){
@@ -29,69 +33,73 @@ public class Cli {
         OperacionAritmetica operacion = null;
         switch (opcion){
             case 1:
-                System.out.println("Ingrese el primer número:");
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el segundo número:");
+                System.out.println(idiomas.INGRESAR_SEGUNDONUMERO);
                 num2 = scanner.nextDouble();
                 operacion = new Suma();
                 break;
             case 2:
-                System.out.println("Ingrese el primer número:");
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el segundo número:");
+                System.out.println(idiomas.INGRESAR_SEGUNDONUMERO);
                 num2 = scanner.nextDouble();
                 operacion = new Resta();
                 break;
             case 3:
-                System.out.println("Ingrese el primer número:");
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el segundo número:");
+                System.out.println(idiomas.INGRESAR_SEGUNDONUMERO);
                 num2 = scanner.nextDouble();
                 operacion = new Multiplicacion();
                 break;
             case 4:
-                System.out.println("Ingrese el dividendo:");
+                System.out.println(idiomas.INGRESAR_DIVIDIENDO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el divisor:");
+                System.out.println(idiomas.INGRESAR_DIVISOR);
                 num2 = scanner.nextDouble();
                 operacion = new Division();
                 break;
             case 5:
-                System.out.println("Ingrese el dividendo:");
+                System.out.println(idiomas.INGRESAR_DIVIDIENDO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el divisor:");
+                System.out.println(idiomas.INGRESAR_DIVISOR);
                 num2 = scanner.nextDouble();
                 operacion = new Modulo();
                 break;
             case 6:
-                System.out.println("Ingrese el número:");
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese a que potencia lo desea elevar:");
+                System.out.println(idiomas.INGRESAR_POTENCIA);
                 num2 = scanner.nextDouble();
                 operacion = new Potencia();
                 break;
             case 7:
-                System.out.println("Ingrese el primer número:");
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
-                System.out.println("Ingrese el segundo número:");
+                System.out.println(idiomas.INGRESAR_SEGUNDONUMERO);
                 num2 = scanner.nextDouble();
                 operacion = new Logaritmo();
                 break;
-            default:
-                System.out.println("Opcion no valida, intenta de nuevo");
         }
         if (operacion != null) {
-            System.out.println("El resultado es: " + operacion.calcular(num1, num2));
-            System.out.println("\nPrograma Terminado :)");
+            printResult(operacion,num1,num2);
+            System.out.println(idiomas.FINAL);
         } else {
-            System.out.println("Opción no válida, intenta de nuevo");
+            System.out.println(idiomas.OPCION_INVALIDA);
+
         }
+    }
+
+    public static void printResult(OperacionAritmetica operacion, double num1, double num2 ){
+        System.out.println(idiomas.RESULTADO_UNO + operacion.getClass().getSimpleName() + idiomas.RESULTADO_DOS
+                + operacion.calcular(num1,num2));
     }
 }
