@@ -7,8 +7,12 @@ public class Cli {
     private static final Scanner scanner = new Scanner(System.in);
     private static double num1;
     private static double num2;
+    //Se declara con el idioma español predeterminado
     private static Idiomas idiomas = new Espanol();
 
+    /**
+     * Clase de menu para escoger el idioma del interfaz
+     */
     public static void showMenu(){
         System.out.println("Escoga un idioma (Choose a language:): ");
         System.out.println("A. Español (Spanish)");
@@ -33,6 +37,7 @@ public class Cli {
         OperacionAritmetica operacion = null;
         switch (opcion){
             case 1:
+                //asi se manda a llamar las variables de los textos
                 System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
                 num1 = scanner.nextDouble();
 
@@ -98,6 +103,9 @@ public class Cli {
         }
     }
 
+    /**
+     * Metodo para imprimir los resultados de las operaciones
+     */
     public static void printResult(OperacionAritmetica operacion, double num1, double num2 ){
         System.out.println(idiomas.RESULTADO_UNO + operacion.getClass().getSimpleName() + idiomas.RESULTADO_DOS
                 + operacion.calcular(num1,num2));

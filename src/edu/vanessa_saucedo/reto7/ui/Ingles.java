@@ -1,6 +1,10 @@
 package edu.vanessa_saucedo.reto7.ui;
 
 public class Ingles extends Idiomas{
+
+    /**
+     * Constructor para declarar al idioma ingles
+     */
     public Ingles(){
         MENU = "---Calculator---"+
                 "\nChoose an option:\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus" +

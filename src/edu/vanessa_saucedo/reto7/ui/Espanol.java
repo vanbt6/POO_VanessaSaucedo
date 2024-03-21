@@ -1,6 +1,13 @@
 package edu.vanessa_saucedo.reto7.ui;
 
+/**
+ * Esta clase es para el idioma español
+ */
 public class Espanol extends Idiomas {
+
+    /**
+     * Constructor para declarar al idioma español
+     */
     public Espanol(){
         MENU = "---Calculadora---"+
         "\nElige una opción: \n1.Suma\n2.Resta\n3.Multiplicación\n4.División\n5.Modulo\n6.Potencia\n7.Logaritmo"+
