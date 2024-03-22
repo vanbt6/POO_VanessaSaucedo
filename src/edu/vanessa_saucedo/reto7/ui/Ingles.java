@@ -8,7 +8,7 @@ public class Ingles extends Idiomas{
     public Ingles(){
         MENU = "---Calculator---"+
                 "\nChoose an option:\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Modulus" +
-                "\n6.Exponentiation\n7.Logarithm"+
+                "\n6.Exponentiation\n7.Logarithm\n8.Root"+
                 "\nEnter the number of the desired option:";
         INGRESAR_PRIMERNUMERO = "Enter the first number: " ;
         INGRESAR_SEGUNDONUMERO = "Enter the second number: ";

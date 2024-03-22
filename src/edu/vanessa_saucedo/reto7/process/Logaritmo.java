@@ -11,8 +11,12 @@ public class Logaritmo extends Division{
      */
     @Override
     public double calcular(double num1, double num2) {
-        double logaritmoNumero = Math.log(num1);
-        double logaritmoBase = Math.log(num2);
-        return super.calcular(logaritmoNumero, logaritmoBase);
+        double logaritmo = 0;
+        double argumento = num1;
+        while (argumento > 1) {
+            argumento = super.calcular(argumento, num2);
+            logaritmo++;
+        }
+        return logaritmo;
     }
 }

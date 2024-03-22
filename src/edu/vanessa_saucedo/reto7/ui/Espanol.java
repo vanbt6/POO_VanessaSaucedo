@@ -10,7 +10,7 @@ public class Espanol extends Idiomas {
      */
     public Espanol(){
         MENU = "---Calculadora---"+
-        "\nElige una opción: \n1.Suma\n2.Resta\n3.Multiplicación\n4.División\n5.Modulo\n6.Potencia\n7.Logaritmo"+
+        "\nElige una opción: \n1.Suma\n2.Resta\n3.Multiplicación\n4.División\n5.Modulo\n6.Potencia\n7.Logaritmo\n8.Raiz"+
         "\nIngrese el numero de la opción deseada:";
 
         INGRESAR_PRIMERNUMERO = "Ingrese el primer número:";

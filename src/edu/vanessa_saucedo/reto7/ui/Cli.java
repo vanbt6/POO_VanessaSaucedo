@@ -93,6 +93,14 @@ public class Cli {
                 num2 = scanner.nextDouble();
                 operacion = new Logaritmo();
                 break;
+            case 8:
+                System.out.println(idiomas.INGRESAR_PRIMERNUMERO);
+                num1 = scanner.nextDouble();
+
+                System.out.println(idiomas.INGRESAR_SEGUNDONUMERO);
+                num2 = scanner.nextDouble();
+                operacion = new Raiz();
+                break;
         }
         if (operacion != null) {
             printResult(operacion,num1,num2);
