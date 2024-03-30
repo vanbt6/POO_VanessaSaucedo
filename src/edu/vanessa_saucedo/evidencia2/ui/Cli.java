@@ -9,6 +9,10 @@ import java.util.Scanner;
 public class Cli {
     private static final Scanner scanner = new Scanner(System.in);
     private static Idiomas idiomas = new Espanol();
+
+    /**
+     * Metodo para escoger el idioma del programa e iniciar sesion
+     */
     public static void menuIdiomas(){
         System.out.println("Favor de escoger un idioma (please choose a language):");
         System.out.println("A. Español (Spanish)");
@@ -27,6 +31,10 @@ public class Cli {
         CalculadoraDeCostos.iniciarSesion(idiomas);
     }
 
+    /**
+     * Metodo para mostrar solo el reporte de consumo del usuario
+     * @param consumoUsuario lista de sus consumos total
+     */
     public static void launchReporte(List<Producto> consumoUsuario){
         menuIdiomas();
         System.out.println(idiomas.BIENVENIDA);

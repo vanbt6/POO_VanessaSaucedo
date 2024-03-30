@@ -1,7 +1,15 @@
 package edu.vanessa_saucedo.evidencia2.data;
 
 public class Pelicula extends Producto{
+    /**
+     * Constructor para obtener todas los atributos del producto
+     *
+     * @param nombre      de la pelicula
+     * @param genero      de la pelicula
+     * @param estreno     si es estreno o no
+     */
     public Pelicula(String nombre, String genero, boolean estreno) {
+
         super(nombre, 0, genero, estreno);
     }
 
@@ -16,6 +24,6 @@ public class Pelicula extends Producto{
 
     @Override
     public String toString() {
-        return "Pelicula/Movie:" + ","+ this.getGenero();
+        return "Pelicula/Movie:" + this.getNombre() + ","+ this.getGenero();
     }
 }

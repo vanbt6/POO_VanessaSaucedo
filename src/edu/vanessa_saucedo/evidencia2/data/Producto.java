@@ -9,6 +9,7 @@ public abstract class Producto {
     private String genero;
     private boolean estreno;
 
+    //Constructor para asignar los atributos
     public Producto(String nombre, double precio, String genero, boolean estreno) {
         this.nombre = nombre;
         this.precio = precio;
@@ -34,6 +35,7 @@ public abstract class Producto {
       return  this.genero;
     }
 
+    //Metodo abstracto para calcular los costos
     public abstract double calcularCosto();
 
 

@@ -3,8 +3,18 @@ package edu.vanessa_saucedo.evidencia2.data;
 public class Libro extends Producto{
     private double costoPorDia;
 
+    /**
+     * Constructor para obtener todas los atributos del producto
+     *
+     * @param nombre      del libro
+     * @param genero      del libro
+     * @param estreno     si es estreno o no
+     * @param costoPorDia del lectura del libro
+     */
+
     public Libro(String nombre, String genero, boolean estreno, double costoPorDia) {
         super(nombre, 0, genero, estreno);
+        //asignar el costo por dia del libro
         this.costoPorDia = costoPorDia;
     }
 
@@ -35,6 +45,6 @@ public class Libro extends Producto{
 
     @Override
     public String toString() {
-        return "Libro/Book: " + ","+ this.getGenero();
+        return "Libro/Book: " + this.getNombre() + ","+ this.getGenero();
     }
 }

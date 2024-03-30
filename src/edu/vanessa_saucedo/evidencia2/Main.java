@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args){
+        //Declarar las listas que se usaran en la Calculadora
         List<Producto> productos = CalculadoraDeCostos.crearProductos();
         List<Producto> consumoUsuario = CalculadoraDeCostos.generarConsumoAleatorio(productos);
        Cli.launchReporte(consumoUsuario);
