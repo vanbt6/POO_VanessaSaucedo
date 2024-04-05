@@ -41,7 +41,7 @@ public class Cli {
                 System.out.println(Idiomas.LISTA_PALABRAS);
                 break;
             default:
-                System.out.println(Idiomas.ERROR);
+                System.out.println(Idiomas.ERROR_LIBRO);
         }
         AdministradorDePalabras.setLibrosDisponibles(libroSeleccionado);
     }
