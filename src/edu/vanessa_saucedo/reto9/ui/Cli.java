@@ -9,8 +9,8 @@ public class Cli {
     private static String libroSeleccionado;
     public static void menuIdiomas(){
         System.out.println("Escoga un idioma (Choose a language:): ");
-        System.out.println("A. Español (Spanish)");
-        System.out.println("B. Ingles (English)");
+        System.out.println("ESP. Español (Spanish)");
+        System.out.println("ENG. Ingles (English)");
         String idiomaSeleccionado = scanner.nextLine();
         Idiomas idiomas = Idiomas.getInstance(idiomaSeleccionado);
         System.out.println(idiomas.MENU);

@@ -1,9 +1,14 @@
 package edu.vanessa_saucedo.reto9.process;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Esta clase es para limpiar las plabras del libro, cuenta con el metodo de obtenerPalabras
@@ -16,18 +21,18 @@ public class LimpiadorDePalabras {
      * @return la lista de palabras del libro
      */
     public static List<String> obtenerPalabras(String filePath){
-        List<String> palabras = new ArrayList<>();
-        try {
-            Scanner scanner = new Scanner(new File(filePath));
-            while (scanner.hasNext()) {
-                //Sirve para eliminar/ignorar los caracteres especiales y espacios e incluir acentos
-                String palabra = scanner.next().toLowerCase().replaceAll("[^a-zA-ZñÑ´¨]", "");
-                palabras.add(palabra);
-            }
-            scanner.close();
-        }catch (Exception e) {
+        try (Stream<String> lines = Files.lines(Paths.get(filePath))){
+            return lines
+                    // Divide cada línea en palabras
+                    .flatMap(line -> Stream.of(line.split("\\s+")))
+                    // Elimina caracteres especiales
+                    .map(word -> word.replaceAll("[^a-zA-ZñÑáéíóúüÁÉÍÓÚÜ]", ""))
+                    // Filtra las palabras vacías
+                    .filter(word -> !word.isEmpty())
+                    // Recolecta las palabras en una lista
+                    .collect(Collectors.toList());
+        }catch (IOException e){
             throw new RuntimeException(e);
         }
-        return palabras;
     }
 }
