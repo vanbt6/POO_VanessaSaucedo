@@ -16,6 +16,7 @@ public class Idiomas {
     public static String PALABRAS_IMPAR;
     public static String PALABRA_LARGA;
     public static String PALABRA_CORTA;
+    public static String CRITERIO_ERROR;
     public static Idiomas getInstance(String idioma){
         Textos opcion = Textos.valueOf(idioma);
         switch (opcion){
@@ -38,6 +39,7 @@ public class Idiomas {
                 PALABRAS_IMPAR ="---Palabras que contienen un número impar de letras---:" ;
                 PALABRA_LARGA = "---La palabra mas larga es---: ";
                 PALABRA_CORTA = "---La palabra mas corta es---: ";
+                CRITERIO_ERROR = "No se encuentra una palabra con ese criterio";
                 break;
                 // Idioma Ingles
             case Textos.ENG:
@@ -58,6 +60,7 @@ public class Idiomas {
                 PALABRAS_IMPAR ="---Words that contain an odd number of letters---:" ;
                 PALABRA_LARGA = "---The longest word is---: ";
                 PALABRA_CORTA = "---The shortest word is---: ";
+                CRITERIO_ERROR = "I can't find a word with that criteria.";
                 break;
             default:
                 throw new IllegalArgumentException("Idioma no disponible");

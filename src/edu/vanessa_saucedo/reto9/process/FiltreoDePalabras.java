@@ -82,11 +82,17 @@ public class FiltreoDePalabras {
      * @param palabras lista de palabras limpia (sin caracteres especiales)
      */
     public static void criterioVocales(List<String> palabras){
-        boolean criterioVocal = palabras.stream()
-                //encuentra si el criterio se cumple que empiece y termine con vocal, y tenga por lo menos
-                //5 letras
-                .anyMatch(p -> p.matches("^[aeiouAEIOU].*[aeiouAEIOU]$") && p.length() >=5);
-        System.out.println(Idiomas.CRITERIO_VOCALES + criterioVocal);
+        Optional<String> criterioVocal = palabras.stream()
+                // Encuentra si el criterio se cumple: comienza y termina con vocal y tiene al menos 5 letras
+                .filter(p -> p.matches("^[aeiouAEIOU].*[aeiouAEIOU]$") && p.length() >= 5)
+                // Encuentra la primera palabra que cumple con el criterio
+                .findFirst();
+        // Verifica si se encontró una palabra que cumple con el criterio y la imprime
+        if (criterioVocal.isPresent()) {
+            System.out.println(Idiomas.CRITERIO_VOCALES + criterioVocal.get());
+        } else {
+            System.out.println(Idiomas.CRITERIO_ERROR);
+        }
 
     }
 
