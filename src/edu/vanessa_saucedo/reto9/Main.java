@@ -10,6 +10,5 @@ public class Main {
         }catch (Exception e){
             System.out.println("Ocurrrió un error inesperado");
         }
-
     }
 }
