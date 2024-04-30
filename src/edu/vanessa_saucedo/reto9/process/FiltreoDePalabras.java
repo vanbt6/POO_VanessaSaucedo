@@ -4,16 +4,21 @@ import edu.vanessa_saucedo.reto9.ui.Idiomas;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class FiltreoDePalabras {
 
     /**
      * Metodo que toma una lista de palabras, las convierte en un flujo de caracteres Unicode
      * filtra solo las vocales y luego cuenta el número total de vocales presentes en todas las palabras.
+     *
      * @param palabras lista de palabras ya limpia, sin caracteres especiales
+     * @return
      */
-    public static void contarVocales(List<String> palabras){
+    public static long contarVocales(List<String> palabras){
+        palabras = palabras.stream().filter(Objects::nonNull).collect(Collectors.toList());
         //convierte la lista en un flujo de elementos stream
         long totalVocales = palabras.stream()
                 //Se hace un mapeo de cada palabra a un steam de enteros que representa los valores
@@ -22,9 +27,10 @@ public class FiltreoDePalabras {
                 //La lambda hace que cada valor entero se convierta en un caracter
                 .mapToObj(c -> (char) c)
                 //Filtro para mantener solo las vocales; "indexOf" devuelve la posición del caracter
-                .filter(c -> "aeiouAEIOU".indexOf(c) != -1)
+                .filter(c -> "aeiouAEIOUáéíóúÁÉÍÓÚ".indexOf(c) != -1)
                 .count();
         System.out.println(Idiomas.TOTAL_VOCALES + totalVocales);
+        return totalVocales;
     }
 
     /**
@@ -35,7 +41,7 @@ public class FiltreoDePalabras {
         palabras.stream()
                 //filtra las palabras en las que la primera letra sea una vocal
                 .filter(p -> p.length() > 0 && "aeiouAEIOU".indexOf(p.charAt(0)) != -1)
-                .sorted()
+                .sorted(String::compareToIgnoreCase)
                 .distinct()
                 .forEach(System.out::println);
     }
